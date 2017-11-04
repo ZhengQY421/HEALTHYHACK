@@ -1,0 +1,66 @@
+<head>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCMGVQYIIGQHzGgFrEt7r1il4YnxJiCU5M",
+    authDomain: "patientcheck-868ac.firebaseapp.com",
+    databaseURL: "https://patientcheck-868ac.firebaseio.com",
+    projectId: "patientcheck-868ac",
+    storageBucket: "patientcheck-868ac.appspot.com",
+    messagingSenderId: "331209766864"
+  };
+
+firebase.initializeApp(config);
+  var user = "P016A590ED0934667A5DAD68EA6987D93";
+
+// init a global var for seleected patient
+    var selectedPatient = {};
+
+   var query = firebase.database().ref(`/${user}`).once('value').then(function(data) {
+     var patient = data.val();
+     // update the selectedPatient with the actual data
+     selectedPatient = patient.Administration;
+    var keys = Object.keys(patient.Administration);
+    console.log(keys);
+    var firstVisit = keys[0];
+    console.log(patient.Administration[firstVisit]);
+    var myVisits = [];
+    keys.forEach(function(key, index){
+      var obj = patient.Administration[key];
+      var inputElement = $("<option value=" + key + ">" + key + "</option>")
+      $('#select').append(inputElement);
+    })
+
+    var selectedVisit = $('#select').val();
+    $('#select').on('change',function(){
+      //debugger
+      console.log(this.value)
+      selectedVisit = selectedPatient[this.value];
+      $('#enddate').text('End Date: ' + selectedVisit.EndDate);
+      $('#diagnosiscode').text('Code: ' + selectedVisit.PrimaryDiagnosisCode);
+      $('#diagnosisdescrip').text('Diagnosis: ' + selectedVisit.PrimaryDiagnosisDescription);
+      $('#startdate').text('Start Date: ' + selectedVisit.StartDate);
+
+    })
+
+
+  });
+</script>
+</head>
+<body>
+  <!-- <h1 id="gender"></h1> -->
+  <select id="select" name="stuff">
+
+  </select>
+  <h1 id="startdate"></h1>
+  <h1 id="enddate"></h1>
+  <h1 id="diagnosisdescrip"></h1>
+  <h1 id="diagnosiscode"></h1>
+
+
+
+</body>
