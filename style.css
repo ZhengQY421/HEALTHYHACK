@@ -1,55 +1,15 @@
-@import url(https://fonts.googleapis.com/css?family=Dosis:300);
 
 .login-page {
   width: 360px;
-  padding: 25px 0 0 0;
+  padding: 10px 0 0 0;
   margin: auto;
-}
-
-.display{
-  position: relative;
-  z-index: 1;
-  background: #FFFFFF;
-  max-width: 800px;
-  margin: 0 auto 215px;
-  padding: 45px;
-  text-align: Left;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-
-}
-.display button {
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #4CAF50;
-  border-radius: 4px;
-  width: 200px;
-  height: 50px;
-  border: 0;
-  padding: 10px;
-  color: #FFFFFF;
-  font-size: 18px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
-  cursor: pointer;
-  align-items: center;
-}
-.center {
-    margin: auto;
-    width: 50%;
-    border: 3px solid green;
-    padding: 10px;
-}
-
-.display button:hover,.display button:active,.display button:focus {
-  background: #43A047;
 }
 .form {
   position: relative;
   z-index: 1;
   background: #FFFFFF;
   max-width: 400px;
-  margin: 0 auto 350px;
+  margin: 0 auto 215px;
   padding: 45px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -65,7 +25,7 @@
   box-sizing: border-box;
   font-size: 14px;
 }
-.form button {
+#submit {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
@@ -79,7 +39,7 @@
   transition: all 0.3 ease;
   cursor: pointer;
 }
-.form button:hover,.form button:active,.form button:focus {
+#submit:hover,.form button:active,.form button:focus {
   background: #b3ecff;
 }
 .form .message {
@@ -128,8 +88,9 @@
   color: #EF3B3A;
 }
 body {
-  background: linear-gradient(white, #4dd2ff);;    
+  	background: linear-gradient(white, #4dd2ff);;    
     line-height: 10px;
+	min-height: 100%;
 }
 
 h1 {
@@ -137,11 +98,14 @@ h1 {
     font-size: 200%;
     font-weight: bold;
     padding-top: 50px;
-    color: #404040
+    color: #404040;
 }
 
 p {
     font-family: 'Dosis', sans-serif;
-    color: #404040
+    color: #404040;
 }
 
+html{
+	height: 100%;
+}
