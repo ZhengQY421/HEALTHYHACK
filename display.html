@@ -1,9 +1,13 @@
+<html>
 <head>
+  <link rel="stylesheet" href="css/style.css">
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-database.js"></script>
 <script>
+
+
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyCMGVQYIIGQHzGgFrEt7r1il4YnxJiCU5M",
@@ -26,5 +30,12 @@ firebase.initializeApp(config);
 </script>
 </head>
 <body>
-  <h1 id="dob"></h1>
+  <div class = "display">
+      <h1 id="dob"></h1>
+      <p></p>
+      <p></p>
+      <button> Click This </button>
+      <button style = "background:#00e6e6"> Click This too </button>
+  </div>
 </body>
+</html>
