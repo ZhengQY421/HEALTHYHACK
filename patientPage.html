@@ -19,7 +19,7 @@
   };
 
 firebase.initializeApp(config);
-  var user = localstorage.getItem("pID");
+  var user = localStorage.getItem("pID");
   var query = firebase.database().ref(`/${user}`).once('value').then(function(data) {
     var patient = data.val();
     var patientGen = patient.General;

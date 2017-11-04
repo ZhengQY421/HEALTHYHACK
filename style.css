@@ -1,8 +1,7 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 .login-page {
   width: 360px;
-  padding: 8% 0 0;
+  padding: 10px 0 0 0;
   margin: auto;
 }
 .form {
@@ -30,7 +29,7 @@
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background: #4CAF50;
+  background: #66d9ff;
   width: 100%;
   border: 0;
   padding: 15px;
@@ -41,7 +40,7 @@
   cursor: pointer;
 }
 .form button:hover,.form button:active,.form button:focus {
-  background: #43A047;
+  background: #b3ecff;
 }
 .form .message {
   margin: 15px 0 0;
@@ -89,13 +88,24 @@
   color: #EF3B3A;
 }
 body {
-  background: #00e6e6; /* fallback for old browsers */
-  background: -webkit-linear-gradient(#00e6e6 , #009999);
-  background: -moz-linear-gradient(#00e6e6 , #009999);
-  background: -o-linear-gradient(#00e6e6 , #009999);
-  background: linear-gradient(#00e6e6 , #009999);
+  	background: linear-gradient(white, #4dd2ff);;    
+    line-height: 10px;
+	min-height: 100%;
+}
 
-  font-family: "Roboto", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;      
+h1 {
+    font-family: 'Dosis', sans-serif;
+    font-size: 200%;
+    font-weight: bold;
+    padding-top: 50px;
+    color: #404040;
+}
+
+p {
+    font-family: 'Dosis', sans-serif;
+    color: #404040;
+}
+
+html{
+	height: 100%;
 }
