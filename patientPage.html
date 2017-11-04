@@ -1,1 +1,78 @@
-its getting mad because it thinks this is just an epty file i;ll prove it wrong
+<head>
+  <meta charset="UTF-8">
+	<title>Patient Portal</title>
+	<link href="style.css" rel="stylesheet">
+</head>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCMGVQYIIGQHzGgFrEt7r1il4YnxJiCU5M",
+    authDomain: "patientcheck-868ac.firebaseapp.com",
+    databaseURL: "https://patientcheck-868ac.firebaseio.com",
+    projectId: "patientcheck-868ac",
+    storageBucket: "patientcheck-868ac.appspot.com",
+    messagingSenderId: "331209766864"
+  };
+
+firebase.initializeApp(config);
+  var user = localstorage.getItem("pID");
+  var query = firebase.database().ref(`/${user}`).once('value').then(function(data) {
+    var patient = data.val();
+    var patientGen = patient.General;
+    var pInfo = [patientGen.DOB, patientGen.Gender, patientGen.Language, patientGen.MaritalStatus, patientGen.Race];
+    var ptag = ['#dob','#gen','#lang','#mStat','#race'];
+
+    for (i=0; i<pInfo.length; i++){
+      $(ptag[i]).text(pInfo[i]);
+    }
+
+    $('#userID').text(user);
+
+
+    //
+  });
+</script>
+</head>
+<body>
+  <div class = 'display'>
+    <h1> Patient ID: <span style = "font-weight: normal" id = "userID" ></span> </h1>
+    <table>
+     <tr>
+        <td>
+           <strong class="label">Date of Birth: </strong>
+        </td>
+        <td>
+           <span class="data" id="dob"></span>
+        </td>
+     </tr>
+     <tr>
+        <td>
+           <strong class="label">Gender: </strong>
+        </td>
+        <td>
+           <span class="data" id="gen"></span>
+        </td>
+     </tr>
+     <tr
+        >
+        <td><strong class="label">Language: </strong></td>
+        <td><span class="data" id="lang"></span></td>
+     </tr>
+     <tr>
+        <td><strong class="label">Marital Status: </strong></td>
+        <td><span class="data" id="mStat"></span></td>
+     </tr>
+     <tr>
+        <td><strong class="label">Race: </strong></td>
+        <td><span class="data" id="race"></span></td>
+     </tr>
+  </table>
+
+  <h2>Past Visits: </h2>
+
+  </div>
+</body>
