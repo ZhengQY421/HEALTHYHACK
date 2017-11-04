@@ -34,8 +34,28 @@ firebase.initializeApp(config);
       <h1 id="dob"></h1>
       <p></p>
       <p></p>
-      <button> Click This </button>
-      <button style = "background:#00e6e6"> Click This too </button>
+      <center>
+      <button onclick="diag()"> Diagnosis Lookup</button>
+      <button onclick="openW()">Check Medicine</button>
+      <button onclick="goBack()">Log Out</button>
+      </center>
   </div>
+<script language="javascript">
+  function openW(){
+    myWindow = window.open("https://www.drugs.com/","width=1250,height=600,menubar=yes,left=200")
+  }
+  function relo(){
+    window.location.reload();
+  }
+  function diag(){
+    var str = "https://www.nuemd.com/icd-10/codes/"
+    win2 = window.open(str,"width=1250,height=600,menubar=yes")
+  }
+  function goBack(){
+    location.replace("index (1).html")
+    // probably not named this anymore
+  }
+</script>
 </body>
+
 </html>
