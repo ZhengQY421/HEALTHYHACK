@@ -1,13 +1,11 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@import url(https://fonts.googleapis.com/css?family=Dosis:300);
 
 .login-page {
   width: 360px;
-  padding: 8% 0 0;
+  padding: 25px 0 0 0;
   margin: auto;
 }
-p {
-  padding-bottom: 100px;
-}
+
 .display{
   position: relative;
   z-index: 1;
@@ -51,7 +49,7 @@ p {
   z-index: 1;
   background: #FFFFFF;
   max-width: 400px;
-  margin: 0 auto 300px;
+  margin: 0 auto 350px;
   padding: 45px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -71,7 +69,7 @@ p {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background: #4CAF50;
+  background: #66d9ff;
   width: 100%;
   border: 0;
   padding: 15px;
@@ -82,7 +80,7 @@ p {
   cursor: pointer;
 }
 .form button:hover,.form button:active,.form button:focus {
-  background: #43A047;
+  background: #b3ecff;
 }
 .form .message {
   margin: 15px 0 0;
@@ -130,13 +128,20 @@ p {
   color: #EF3B3A;
 }
 body {
-  background: #00e6e6; /* fallback for old browsers */
-  background: -webkit-linear-gradient(#00e6e6 , #009999);
-  background: -moz-linear-gradient(#00e6e6 , #009999);
-  background: -o-linear-gradient(#00e6e6 , #009999);
-  background: linear-gradient(#00e6e6 , #009999);
-
-  font-family: "Roboto", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;      
+  background: linear-gradient(white, #4dd2ff);;    
+    line-height: 10px;
 }
+
+h1 {
+    font-family: 'Dosis', sans-serif;
+    font-size: 200%;
+    font-weight: bold;
+    padding-top: 50px;
+    color: #404040
+}
+
+p {
+    font-family: 'Dosis', sans-serif;
+    color: #404040
+}
+
